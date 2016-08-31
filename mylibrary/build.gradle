@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultPublishConfig "libPaid"
+    publishNonDefault true
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        sdk_0823 {
+            minSdkVersion 8
+            targetSdkVersion 23
+            compileSdkVersion 23
+            buildConfigField "String", "TYPE", "\"sdk_0823\""
+        }
+        sdk_1423 {
+            minSdkVersion 14
+            targetSdkVersion 23
+            compileSdkVersion 23
+            buildConfigField "String", "TYPE", "\"sdk_1423\""
+        }
+        sdk_1623 {
+            minSdkVersion 16
+            targetSdkVersion 23
+            compileSdkVersion 23
+            buildConfigField "String", "TYPE", "\"sdk_1623\""
+        }
+        sdk_1624 {
+            minSdkVersion 16
+            targetSdkVersion 24
+            compileSdkVersion 24
+            buildConfigField "String", "TYPE", "\"sdk_1624\""
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+}

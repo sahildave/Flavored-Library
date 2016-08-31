@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "xyz.sahildave.flavoredlibrary"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        sdk823 {
+            minSdkVersion 8
+            targetSdkVersion 23
+            compileSdkVersion 23
+            buildConfigField "String", "BUILD", "\"sdk823\""
+        }
+        sdk1423 {
+            minSdkVersion 14
+            targetSdkVersion 23
+            compileSdkVersion 23
+            buildConfigField "String", "BUILD", "\"sdk1423\""
+        }
+        sdk1623 {
+            minSdkVersion 16
+            targetSdkVersion 23
+            compileSdkVersion 23
+            buildConfigField "String", "BUILD", "\"sdk1623\""
+        }
+        sdk1624 {
+            buildConfigField "String", "BUILD", "\"sdk1624\""
+        }
+    }
+}
+
+configurations {
+    sdk823DebugCompile
+    sdk1423DebugCompile
+    sdk1623DebugCompile
+    sdk1624DebugCompile
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+
+    sdk823DebugCompile project(path: ':mylibrary', configuration: 'sdk_0823Debug')
+    sdk1423DebugCompile project(path: ':mylibrary', configuration: 'sdk_1423Debug')
+    sdk1623DebugCompile project(path: ':mylibrary', configuration: 'sdk_1623Debug')
+    sdk1624DebugCompile project(path: ':mylibrary', configuration: 'sdk_1624Debug')
+}
