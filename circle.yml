@@ -22,6 +22,9 @@ dependencies:
     pre:
         - echo y | android update sdk --no-ui --all --filter tools,platform-tools,extra-google-m2repository,extra-google-google_play_services,extra-android-support,android-24
         - echo y | android update sdk --no-ui --all --filter build-tools-24.0.2
+        - sudo add-apt-repository ppa:cwchien/gradle -y
+        - sudo apt-get update
+        - sudo apt-get install gradle-2.14.1
     cache_directories:
         - /usr/local/android-sdk-linux/tools
         - /usr/local/android-sdk-linux/build-tools/24.0.2
