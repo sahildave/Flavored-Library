@@ -1,13 +1,9 @@
-# Copied from: https://gist.github.com/donnfelker/8181c85494cfd6f5b5a874dd126c985a
-#
+# Forked from: https://gist.github.com/donnfelker/8181c85494cfd6f5b5a874dd126c985a
 #
 # Build configuration for Circle CI
 #
 # See this thread for speeding up and caching directories: https://discuss.circleci.com/t/installing-android-build-tools-23-0-2/924
 #
-#
-#
-
 
 general:
     artifacts:
@@ -27,10 +23,10 @@ dependencies:
         - wget "https://services.gradle.org/distributions/gradle-2.14.1-bin.zip"; unzip gradle-2.14.1-bin.zip
         - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 
-
     cache_directories:
       - /usr/local/android-sdk-linux/platforms/android-24
       - /usr/local/android-sdk-linux/build-tools/24.0.2
+      - /usr/local/android-sdk-linux/tools
       - /usr/local/android-sdk-linux/extras/android/m2repository
 
 test:
