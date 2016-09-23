@@ -12,6 +12,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ((TextView) findViewById(R.id.textView)).setText(BuildConfig.BUILD + "     "+LibraryConfig.getType());
+        ((TextView) findViewById(R.id.textView)).setText("App: "+BuildConfig.APP_VERSION+"\nType: "+ BuildConfig.BUILD_TYPE + "\nLibrary: "+LibraryConfig.getType());
     }
 }

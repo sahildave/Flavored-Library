@@ -18,35 +18,30 @@ android {
         }
     }
     productFlavors {
-        sdk823 {
+        app823 {
             minSdkVersion 8
             targetSdkVersion 23
             compileSdkVersion 23
-            buildConfigField "String", "BUILD", "\"sdk823\""
+            buildConfigField "String", "APP_VERSION", "\"app823\""
         }
-        sdk1423 {
-            minSdkVersion 14
-            targetSdkVersion 23
-            compileSdkVersion 23
-            buildConfigField "String", "BUILD", "\"sdk1423\""
-        }
-        sdk1623 {
+        app1624 {
             minSdkVersion 16
-            targetSdkVersion 23
-            compileSdkVersion 23
-            buildConfigField "String", "BUILD", "\"sdk1623\""
-        }
-        sdk1624 {
-            buildConfigField "String", "BUILD", "\"sdk1624\""
+            targetSdkVersion 24
+            compileSdkVersion 24
+            buildConfigField "String", "APP_VERSION", "\"app1624\""
         }
     }
 }
 
 configurations {
-    sdk823DebugCompile
-    sdk1423DebugCompile
-    sdk1623DebugCompile
-    sdk1624DebugCompile
+//    sdk823DebugCompile
+    app823DebugCompile
+    app823ReleaseCompile
+//    sdk1423DebugCompile
+//    sdk1623DebugCompile
+//    sdk1624DebugCompile
+    app1624DebugCompile
+    app1624ReleaseCompile
 }
 
 dependencies {
@@ -54,8 +49,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
 
-    sdk823DebugCompile project(path: ':mylibrary', configuration: 'sdk_0823Debug')
-    sdk1423DebugCompile project(path: ':mylibrary', configuration: 'sdk_1423Debug')
-    sdk1623DebugCompile project(path: ':mylibrary', configuration: 'sdk_1623Debug')
-    sdk1624DebugCompile project(path: ':mylibrary', configuration: 'sdk_1624Debug')
+//    sdk823DebugCompile project(path: ':mylibrary', configuration: 'sdk_0823Debug')
+    app823DebugCompile project(path: ':mylibrary', configuration: 'sdk_0823Debug')
+    app823ReleaseCompile project(path: ':mylibrary', configuration: 'sdk_0823Release')
+//    sdk1423DebugCompile project(path: ':mylibrary', configuration: 'sdk_1423Debug')
+//    sdk1623DebugCompile project(path: ':mylibrary', configuration: 'sdk_1623Debug')
+//    sdk1624DebugCompile project(path: ':mylibrary', configuration: 'sdk_1624Debug')
+    app1624DebugCompile project(path: ':mylibrary', configuration: 'sdk_1624Debug')
+    app1624ReleaseCompile project(path: ':mylibrary', configuration: 'sdk_1624Release')
 }
