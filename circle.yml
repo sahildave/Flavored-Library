@@ -25,7 +25,6 @@ dependencies:
         - echo y | android update sdk --no-ui --all --filter tools,platform-tools,extra-google-m2repository,extra-android-m2repository,extra-google-google_play_services,extra-android-support,android-24
         - echo y | android update sdk --no-ui --all --filter build-tools-24.0.2
         - wget "https://services.gradle.org/distributions/gradle-2.13-bin.zip"; unzip gradle-2.13-bin.zip
-        - source environmentSetup.sh && copyEnvVarsToGradleProperties
         - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 
 test:
