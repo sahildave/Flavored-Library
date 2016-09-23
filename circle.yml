@@ -1,0 +1,32 @@
+# Copied from: https://gist.github.com/donnfelker/8181c85494cfd6f5b5a874dd126c985a
+#
+#
+# Build configuration for Circle CI
+#
+# See this thread for speeding up and caching directories: https://discuss.circleci.com/t/installing-android-build-tools-23-0-2/924
+#
+#
+#
+
+
+general:
+    artifacts:
+        - /home/ubuntu/gradle-flavored-library-example/app/build/outputs/apk/
+
+machine:
+    environment:
+        ANDROID_HOME: /usr/local/android-sdk-linux
+
+
+dependencies:
+    pre:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,extra-google-m2repository,extra-google-google_play_services,extra-android-support,android-24
+        - echo y | android update sdk --no-ui --all --filter build-tools-24.0.2
+    cache_directories:
+        - /usr/local/android-sdk-linux/tools
+        - /usr/local/android-sdk-linux/build-tools/24.0.2
+
+test:
+    override:
+        - ./gradlew assemble
+        - cp -r app/build/outputs $CIRCLE_ARTIFACTS
