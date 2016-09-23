@@ -28,11 +28,9 @@ dependencies:
         - sudo apt-get update
         - sudo apt-get install gradle-2.14.1
         - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
-    cache_directories:
-        - /usr/local/android-sdk-linux/tools
-        - /usr/local/android-sdk-linux/build-tools/24.0.2
 
 test:
     override:
-        - (./gradlew assemble)
+        - (./gradlew assemble):
             timeout: 360
+        - cp -r app/build/outputs $CIRCLE_ARTIFACTS
