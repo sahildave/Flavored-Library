@@ -24,8 +24,14 @@ dependencies:
     pre:
         - echo y | android update sdk --no-ui --all --filter tools,platform-tools,extra-google-m2repository,extra-android-m2repository,extra-google-google_play_services,extra-android-support,android-24
         - echo y | android update sdk --no-ui --all --filter build-tools-24.0.2
-        - wget "https://services.gradle.org/distributions/gradle-2.13-bin.zip"; unzip gradle-2.13-bin.zip
+        - wget "https://services.gradle.org/distributions/gradle-2.14.1-bin.zip"; unzip gradle-2.14.1-bin.zip
         - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+
+
+    cache_directories:
+      - /usr/local/android-sdk-linux/platforms/android-24
+      - /usr/local/android-sdk-linux/build-tools/24.0.2
+      - /usr/local/android-sdk-linux/extras/android/m2repository
 
 test:
     override:
