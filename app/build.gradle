@@ -34,12 +34,8 @@ android {
 }
 
 configurations {
-//    sdk823DebugCompile
     app823DebugCompile
     app823ReleaseCompile
-//    sdk1423DebugCompile
-//    sdk1623DebugCompile
-//    sdk1624DebugCompile
     app1624DebugCompile
     app1624ReleaseCompile
 }
@@ -47,14 +43,10 @@ configurations {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:24.1.0'
 
-//    sdk823DebugCompile project(path: ':mylibrary', configuration: 'sdk_0823Debug')
     app823DebugCompile project(path: ':mylibrary', configuration: 'sdk_0823Debug')
     app823ReleaseCompile project(path: ':mylibrary', configuration: 'sdk_0823Release')
-//    sdk1423DebugCompile project(path: ':mylibrary', configuration: 'sdk_1423Debug')
-//    sdk1623DebugCompile project(path: ':mylibrary', configuration: 'sdk_1623Debug')
-//    sdk1624DebugCompile project(path: ':mylibrary', configuration: 'sdk_1624Debug')
     app1624DebugCompile project(path: ':mylibrary', configuration: 'sdk_1624Debug')
     app1624ReleaseCompile project(path: ':mylibrary', configuration: 'sdk_1624Release')
 }
