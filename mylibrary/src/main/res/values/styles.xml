@@ -1,7 +1,8 @@
 <resources>
 
-    <style name="AppThemeLibrary" parent="Theme.AppCompat.Light.NoActionBar"/>
-    <style name="AppThemeLibrary.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <style name="AppThemeLibrary.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <!--<style name="AppThemeLibrary" parent="Theme.AppCompat.Light.NoActionBar"/>-->
+    <!--<style name="AppThemeLibrary.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>-->
+    <!--<style name="AppThemeLibrary.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>-->
 
+    <style name="AppThemeLibrary" parent="Theme.AppCompat.Light.DarkActionBar"/>
 </resources>
