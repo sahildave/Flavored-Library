@@ -1,9 +1,6 @@
 # Forked from: https://gist.github.com/donnfelker/8181c85494cfd6f5b5a874dd126c985a
 #
 # Build configuration for Circle CI
-#
-# See this thread for speeding up and caching directories: https://discuss.circleci.com/t/installing-android-build-tools-23-0-2/924
-#
 
 general:
     artifacts:
@@ -14,7 +11,6 @@ machine:
         ANDROID_HOME: /usr/local/android-sdk-linux
     java:
         version: oraclejdk8
-
 
 dependencies:
     pre:

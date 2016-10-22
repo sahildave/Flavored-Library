@@ -5,6 +5,6 @@ package xyz.sahildave.mylibrary;
  */
 public class LibraryConfig {
     public static String getType(){
-        return BuildConfig.SDK_VERSION;
+        return BuildConfig.FLAVOR;
     }
 }

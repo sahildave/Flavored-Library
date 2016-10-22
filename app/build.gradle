@@ -1,13 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
     buildToolsVersion "24.0.2"
 
     defaultConfig {
         applicationId "xyz.sahildave.flavoredlibrary"
-        minSdkVersion 16
-        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
@@ -18,35 +15,33 @@ android {
         }
     }
     productFlavors {
-        app823 {
-            minSdkVersion 8
-            targetSdkVersion 23
-            compileSdkVersion 23
-            buildConfigField "String", "APP_VERSION", "\"app823\""
+        app1521 {
+            minSdkVersion 15
+            targetSdkVersion 21
+            compileSdkVersion 21
+            applicationId "xyz.sahildave.flavoredlibrary.app1521"
         }
-        app1624 {
-            minSdkVersion 16
+        app1524 {
+            minSdkVersion 15
             targetSdkVersion 24
             compileSdkVersion 24
-            buildConfigField "String", "APP_VERSION", "\"app1624\""
+            applicationId "xyz.sahildave.flavoredlibrary.app1524"
         }
     }
 }
 
 configurations {
-    app823DebugCompile
-    app823ReleaseCompile
-    app1624DebugCompile
-    app1624ReleaseCompile
+    app1521DebugCompile
+    app1524DebugCompile
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.1.0'
+//    compile 'com.android.support:appcompat-v7:24.1.0'
 
-    app823DebugCompile project(path: ':mylibrary', configuration: 'sdk_0823Debug')
-    app823ReleaseCompile project(path: ':mylibrary', configuration: 'sdk_0823Release')
-    app1624DebugCompile project(path: ':mylibrary', configuration: 'sdk_1624Debug')
-    app1624ReleaseCompile project(path: ':mylibrary', configuration: 'sdk_1624Release')
+    app1521DebugCompile project(path: ':mylibrary', configuration: 'sdk_1521Debug')
+    app1521DebugCompile 'com.android.support:appcompat-v7:21.+'
+    app1524DebugCompile project(path: ':mylibrary', configuration: 'sdk_1524Debug')
+    app1524DebugCompile 'com.android.support:appcompat-v7:24.1.0'
 }

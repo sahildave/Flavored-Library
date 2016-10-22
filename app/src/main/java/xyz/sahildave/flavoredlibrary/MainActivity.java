@@ -1,17 +1,21 @@
 package xyz.sahildave.flavoredlibrary;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 
-import xyz.sahildave.mylibrary.LibraryConfig;
+import xyz.sahildave.mylibrary.LibraryActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ((TextView) findViewById(R.id.textView)).setText("App: "+BuildConfig.APP_VERSION+"\nType: "+ BuildConfig.BUILD_TYPE + "\nLibrary: "+LibraryConfig.getType());
+
+        Intent intent = new Intent(this, LibraryActivity.class);
+        intent.putExtra("APK_FLAVOR", BuildConfig.FLAVOR);
+        intent.putExtra("APK_APP_ID", BuildConfig.APPLICATION_ID);
+        startActivity(intent);
+        finish();
     }
 }
