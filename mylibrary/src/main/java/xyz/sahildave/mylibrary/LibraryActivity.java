@@ -10,6 +10,13 @@ public class LibraryActivity extends FlavoredActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ((TextView) findViewById(R.id.content_text_view))
+                .setText(generateLibraryText());
+
+    }
+
+    @Override
+    String generateLibraryText() {
         StringBuilder builder = new StringBuilder();
         builder.append("\n------LIBRARY--------");
         builder.append("\nFlavor : ").append(BuildConfig.FLAVOR);
@@ -20,10 +27,6 @@ public class LibraryActivity extends FlavoredActivity {
         builder.append("\nFlavor: ").append(getIntent().getStringExtra("APK_FLAVOR"));
         builder.append("\nApplication_ID: ").append(getIntent().getStringExtra("APK_APP_ID"));
 
-
-        ((TextView) findViewById(R.id.content_text_view))
-                .setText(builder.toString());
-
+        return builder.toString();
     }
-
 }

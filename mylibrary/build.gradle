@@ -10,12 +10,12 @@ android {
         versionName "1.0"
     }
     productFlavors {
-        sdk_1521 {
+        sdk1521 {
             minSdkVersion 15
             targetSdkVersion 21
             compileSdkVersion 21
         }
-        sdk_1524 {
+        sdk1524 {
             minSdkVersion 15
             targetSdkVersion 24
             compileSdkVersion 24
@@ -24,9 +24,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
 //    compile 'com.android.support:appcompat-v7:24.2.1'
-    sdk_1524Compile 'com.android.support:appcompat-v7:24.+'
-    sdk_1521Compile 'com.android.support:appcompat-v7:21.+'
-    testCompile 'junit:junit:4.12'
+    sdk1524Compile 'com.android.support:appcompat-v7:24.2.1'
+    sdk1521Compile 'com.android.support:appcompat-v7:21.0.3'
 }

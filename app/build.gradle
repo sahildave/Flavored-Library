@@ -36,12 +36,9 @@ configurations {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
 //    compile 'com.android.support:appcompat-v7:24.1.0'
-
-    app1521DebugCompile project(path: ':mylibrary', configuration: 'sdk_1521Debug')
-    app1521DebugCompile 'com.android.support:appcompat-v7:21.+'
-    app1524DebugCompile project(path: ':mylibrary', configuration: 'sdk_1524Debug')
-    app1524DebugCompile 'com.android.support:appcompat-v7:24.1.0'
+    app1521DebugCompile project(path: ':mylibrary', configuration: 'sdk1521Debug')
+    app1524DebugCompile project(path: ':mylibrary', configuration: 'sdk1524Debug')
+    app1521DebugCompile 'com.android.support:appcompat-v7:21.0.3'
+    app1524DebugCompile 'com.android.support:appcompat-v7:24.2.0'
 }
